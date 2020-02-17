@@ -16,6 +16,7 @@
 		B3DBA24223FB40FF002314ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3DBA24023FB40FF002314ED /* LaunchScreen.storyboard */; };
 		B3DBA24D23FB4100002314ED /* apiHarvesterAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA24C23FB4100002314ED /* apiHarvesterAppTests.swift */; };
 		B3DBA25823FB4181002314ED /* HealthKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA25723FB4181002314ED /* HealthKitView.swift */; };
+		B3DBA25A23FB4794002314ED /* UserDefaultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA25923FB4794002314ED /* UserDefaultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		B3DBA24C23FB4100002314ED /* apiHarvesterAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiHarvesterAppTests.swift; sourceTree = "<group>"; };
 		B3DBA24E23FB4100002314ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3DBA25723FB4181002314ED /* HealthKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitView.swift; sourceTree = "<group>"; };
+		B3DBA25923FB4794002314ED /* UserDefaultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				B3DBA23623FB40FB002314ED /* apiHarvesterApp.xcdatamodeld */,
 				B3DBA23D23FB40FF002314ED /* Preview Content */,
 				B3DBA25723FB4181002314ED /* HealthKitView.swift */,
+				B3DBA25923FB4794002314ED /* UserDefaultsView.swift */,
 			);
 			path = apiHarvesterApp;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				B3DBA23823FB40FB002314ED /* apiHarvesterApp.xcdatamodeld in Sources */,
 				B3DBA23323FB40FB002314ED /* AppDelegate.swift in Sources */,
 				B3DBA25823FB4181002314ED /* HealthKitView.swift in Sources */,
+				B3DBA25A23FB4794002314ED /* UserDefaultsView.swift in Sources */,
 				B3DBA23A23FB40FB002314ED /* ContentView.swift in Sources */,
 				B3DBA23523FB40FB002314ED /* SceneDelegate.swift in Sources */,
 			);
