@@ -1,22 +1,14 @@
-//
-//  ContentView.swift
-//  apiHarvesterApp
-//
-//  Created by Leo Dion on 2/17/20.
-//  Copyright © 2020 BrightDigit. All rights reserved.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-      TabView {
-        HealthKitView().tabItem {
-          VStack{
-            Image(systemName: "suit.heart.fill")
-            Text("HealthKit")
-          }
-        }.tag(0)
+  var body: some View {
+    TabView {
+      HealthKitView().tabItem {
+        VStack {
+          Image(systemName: "suit.heart.fill")
+          Text("HealthKit")
+        }
+      }.tag(0)
 //        HealthKitView().tabItem {
 //          VStack{
 //            Image(systemName: "mappin")
@@ -65,12 +57,12 @@ struct ContentView: View {
 //            Text("Files")
 //          }
 //        }.tag(0)
-      }
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }

@@ -123,6 +123,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3DBA25123FB4100002314ED /* Build configuration list for PBXNativeTarget "CombineAPIHarvesterApp" */;
 			buildPhases = (
+				B3F24AD123FB616D00D322CB /* SwiftFormat */,
+				B3F24AD223FB61C700D322CB /* SwiftLint */,
 				B3DBA22B23FB40FB002314ED /* Sources */,
 				B3DBA22C23FB40FB002314ED /* Frameworks */,
 				B3DBA22D23FB40FB002314ED /* Resources */,
@@ -211,6 +213,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B3F24AD123FB616D00D322CB /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+		B3F24AD223FB61C700D322CB /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B3DBA22B23FB40FB002314ED /* Sources */ = {
