@@ -3,12 +3,18 @@ import SwiftUI
 struct ContentView: View {
   var body: some View {
     TabView {
+      UserDefaultsView().tabItem {
+        VStack {
+          Image(systemName: "person.crop.circle.fill")
+          Text("UserDefaults")
+        }
+      }.tag(1)
       HealthKitView().tabItem {
         VStack {
           Image(systemName: "suit.heart.fill")
           Text("HealthKit")
         }
-      }.tag(0)
+      }.tag(2)
 //        HealthKitView().tabItem {
 //          VStack{
 //            Image(systemName: "mappin")

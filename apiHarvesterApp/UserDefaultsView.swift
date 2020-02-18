@@ -1,8 +1,63 @@
 import SwiftUI
 
+@propertyWrapper
+struct UserDefault<Value> {
+  let key: String
+  let defaultValue: Value
+
+  init(wrappedValue value: Value, key: String) {
+    defaultValue = value
+    self.key = key
+  }
+
+  var wrappedValue: Value {
+    get { UserDefaults.standard.object(forKey: key) as? Value ?? defaultValue }
+    nonmutating set { UserDefaults.standard.set(newValue, forKey: key) }
+  }
+
+  var projectedValue: Binding<Value> {
+    Binding<Value>(get: { self.wrappedValue }, set: { newValue in self.wrappedValue = newValue })
+  }
+}
+
+extension UserDefaults {
+  @objc var healthKitQueried: Bool {
+    get {
+      return bool(forKey: "healthKitQueried")
+    }
+    set {
+      set(newValue, forKey: "healthKitQueried")
+    }
+  }
+}
+
 struct UserDefaultsView: View {
+  // @State var healthKitAuthorized: Bool = false
+  @UserDefault(key: "healthKitQueried") var healthKitQueried: Bool = false
+
+  let publisher = UserDefaults.standard.publisher(for: \.healthKitQueried).eraseToAnyPublisher()
+//
+//  var body: some View {
+//    HStack {
+//      Toggle(isOn: $healthKitQueried, label: {
+//        Text("Health Queried")
+//    })
+//    }.disabled(true).onTapGesture {
+//      print("test")
+//    }.padding(20.0)
+//  }
+
   var body: some View {
-    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    HStack {
+      Toggle(isOn: $healthKitQueried, label: {
+        Text("Health Queried")
+    })
+    }.onReceive(publisher, perform: {
+      self.healthKitQueried = $0
+    })
+      .disabled(true).onTapGesture {
+        print("test")
+      }.padding(20.0)
   }
 }
 

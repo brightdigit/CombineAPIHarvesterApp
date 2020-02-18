@@ -17,6 +17,8 @@
 		B3DBA24D23FB4100002314ED /* apiHarvesterAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA24C23FB4100002314ED /* apiHarvesterAppTests.swift */; };
 		B3DBA25823FB4181002314ED /* HealthKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA25723FB4181002314ED /* HealthKitView.swift */; };
 		B3DBA25A23FB4794002314ED /* UserDefaultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA25923FB4794002314ED /* UserDefaultsView.swift */; };
+		B3F24AD623FB6BE500D322CB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F24AD523FB6BE500D322CB /* HealthKit.framework */; };
+		B3F24AD823FB6BEF00D322CB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F24AD723FB6BEF00D322CB /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,9 @@
 		B3DBA24E23FB4100002314ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3DBA25723FB4181002314ED /* HealthKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitView.swift; sourceTree = "<group>"; };
 		B3DBA25923FB4794002314ED /* UserDefaultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsView.swift; sourceTree = "<group>"; };
+		B3F24AD323FB6BE500D322CB /* CombineAPIHarvesterApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CombineAPIHarvesterApp.entitlements; sourceTree = "<group>"; };
+		B3F24AD523FB6BE500D322CB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B3F24AD723FB6BEF00D322CB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F24AD623FB6BE500D322CB /* HealthKit.framework in Frameworks */,
+				B3F24AD823FB6BEF00D322CB /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,9 +74,11 @@
 		B3DBA22623FB40FB002314ED = {
 			isa = PBXGroup;
 			children = (
+				B3F24AD323FB6BE500D322CB /* CombineAPIHarvesterApp.entitlements */,
 				B3DBA23123FB40FB002314ED /* apiHarvesterApp */,
 				B3DBA24B23FB4100002314ED /* apiHarvesterAppTests */,
 				B3DBA23023FB40FB002314ED /* Products */,
+				B3F24AD423FB6BE500D322CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +123,15 @@
 				B3DBA24E23FB4100002314ED /* Info.plist */,
 			);
 			path = apiHarvesterAppTests;
+			sourceTree = "<group>";
+		};
+		B3F24AD423FB6BE500D322CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3F24AD723FB6BEF00D322CB /* CloudKit.framework */,
+				B3F24AD523FB6BE500D322CB /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CombineAPIHarvesterApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"apiHarvesterApp/Preview Content\"";
 				DEVELOPMENT_TEAM = MLT7M394S7;
@@ -435,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CombineAPIHarvesterApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"apiHarvesterApp/Preview Content\"";
 				DEVELOPMENT_TEAM = MLT7M394S7;
