@@ -15,12 +15,12 @@ struct ContentView: View {
           Text("HealthKit")
         }
       }.tag(2)
-//        HealthKitView().tabItem {
-//          VStack{
-//            Image(systemName: "mappin")
-//            Text("Location")
-//          }
-//        }.tag(0)
+      LocationView().tabItem {
+        VStack {
+          Image(systemName: "mappin")
+          Text("Location")
+        }
+      }.tag(3)
 //        HealthKitView().tabItem {
 //          VStack{
 //            Image(systemName: "bubble.left.fill")

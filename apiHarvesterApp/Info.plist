@@ -24,6 +24,8 @@
 	<string>In order to see your health statistics, we need to permission to read the values.</string>
 	<key>NSHealthShareUsageDescription</key>
 	<string>In order to see your health statistics, we need to permission to read the values.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>In order to see your location, we need access to your location.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
