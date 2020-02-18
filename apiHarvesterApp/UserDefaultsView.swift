@@ -29,11 +29,20 @@ extension UserDefaults {
       set(newValue, forKey: "healthKitQueried")
     }
   }
+
+  @objc var healthKitAuthorized: Bool {
+    get {
+      return bool(forKey: "healthKitAuthorized")
+    }
+    set {
+      set(newValue, forKey: "healthKitAuthorized")
+    }
+  }
 }
 
 struct UserDefaultsView: View {
   // @State var healthKitAuthorized: Bool = false
-  @UserDefault(key: "healthKitQueried") var healthKitQueried: Bool = false
+  @State var healthKitQueried: Bool = false
 
   let publisher = UserDefaults.standard.publisher(for: \.healthKitQueried).eraseToAnyPublisher()
 //
