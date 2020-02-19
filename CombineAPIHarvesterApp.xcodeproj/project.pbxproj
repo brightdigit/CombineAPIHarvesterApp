@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B33DCDC823FCB6B90063CBA9 /* CloudKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DCDC723FCB6B90063CBA9 /* CloudKitView.swift */; };
+		B33DCDCA23FCB8690063CBA9 /* UserNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DCDC923FCB8690063CBA9 /* UserNotificationView.swift */; };
 		B3BD2E2C23FC806700A1BE45 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BD2E2B23FC806700A1BE45 /* LocationView.swift */; };
 		B3DBA23323FB40FB002314ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA23223FB40FB002314ED /* AppDelegate.swift */; };
 		B3DBA23523FB40FB002314ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA23423FB40FB002314ED /* SceneDelegate.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B33DCDC723FCB6B90063CBA9 /* CloudKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitView.swift; sourceTree = "<group>"; };
+		B33DCDC923FCB8690063CBA9 /* UserNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationView.swift; sourceTree = "<group>"; };
 		B3BD2E2B23FC806700A1BE45 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		B3DBA22F23FB40FB002314ED /* CombineAPIHarvesterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineAPIHarvesterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3DBA23223FB40FB002314ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				B3DBA25723FB4181002314ED /* HealthKitView.swift */,
 				B3DBA25923FB4794002314ED /* UserDefaultsView.swift */,
 				B3BD2E2B23FC806700A1BE45 /* LocationView.swift */,
+				B33DCDC723FCB6B90063CBA9 /* CloudKitView.swift */,
+				B33DCDC923FCB8690063CBA9 /* UserNotificationView.swift */,
 			);
 			path = apiHarvesterApp;
 			sourceTree = "<group>";
@@ -286,6 +292,8 @@
 				B3BD2E2C23FC806700A1BE45 /* LocationView.swift in Sources */,
 				B3DBA23A23FB40FB002314ED /* ContentView.swift in Sources */,
 				B3DBA23523FB40FB002314ED /* SceneDelegate.swift in Sources */,
+				B33DCDCA23FCB8690063CBA9 /* UserNotificationView.swift in Sources */,
+				B33DCDC823FCB6B90063CBA9 /* CloudKitView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

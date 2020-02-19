@@ -21,12 +21,18 @@ struct ContentView: View {
           Text("Location")
         }
       }.tag(3)
-//        HealthKitView().tabItem {
-//          VStack{
-//            Image(systemName: "bubble.left.fill")
-//            Text("Notifications")
-//          }
-//        }.tag(0)
+      CloudKitView().tabItem {
+        VStack {
+          Image(systemName: "cloud.fill")
+          Text("CloudKit")
+        }
+      }.tag(4)
+      HealthKitView().tabItem {
+        VStack {
+          Image(systemName: "bubble.left.fill")
+          Text("Notifications")
+        }
+      }.tag(5)
 //        HealthKitView().tabItem {
 //          VStack{
 //            Image(systemName: "chevron.left.slash.chevron.right")
@@ -45,12 +51,7 @@ struct ContentView: View {
 //            Text("Connectivity")
 //          }
 //        }.tag(0)
-//        HealthKitView().tabItem {
-//          VStack{
-//            Image(systemName: "cloud.fill")
-//            Text("CloudKit")
-//          }
-//        }.tag(0)
+
 //        HealthKitView().tabItem {
 //          VStack{
 //            Image(systemName: "calendar")
