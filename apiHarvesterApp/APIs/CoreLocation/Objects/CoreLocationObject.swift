@@ -8,7 +8,7 @@ class CoreLocationObject: ObservableObject {
 
   @Published var authorizationStatus = CLAuthorizationStatus.notDetermined
   @Published var location: Result<CLLocation, Error>?
-  @Published var heading: CLHeading? = nil
+  @Published var heading: CLHeading?
 
   var authorizationCancellable: AnyCancellable!
   var locationsCancellable: AnyCancellable!

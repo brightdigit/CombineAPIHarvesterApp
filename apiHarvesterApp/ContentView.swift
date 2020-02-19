@@ -27,7 +27,7 @@ struct ContentView: View {
           Text("CloudKit")
         }
       }.tag(4)
-      HealthKitView().tabItem {
+      UserNotificationView().tabItem {
         VStack {
           Image(systemName: "bubble.left.fill")
           Text("Notifications")
@@ -71,5 +71,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+      .environmentObject(HealthKitObject()).environmentObject(CoreLocationObject())
+      .environmentObject(UserNotificationObject())
   }
 }
