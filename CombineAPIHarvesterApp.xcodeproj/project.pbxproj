@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B33DCDC823FCB6B90063CBA9 /* CloudKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DCDC723FCB6B90063CBA9 /* CloudKitView.swift */; };
-		B33DCDCA23FCB8690063CBA9 /* UserNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DCDC923FCB8690063CBA9 /* UserNotificationView.swift */; };
-		B3BD2E2C23FC806700A1BE45 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BD2E2B23FC806700A1BE45 /* LocationView.swift */; };
+		B33620EC23FD96740060DCB9 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620C923FD96740060DCB9 /* UserDefault.swift */; };
+		B33620ED23FD96740060DCB9 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620CC23FD96740060DCB9 /* UserDefaults.swift */; };
+		B33620EE23FD96740060DCB9 /* UserDefaultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620CE23FD96740060DCB9 /* UserDefaultsView.swift */; };
+		B33620EF23FD96740060DCB9 /* CloudKitObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620D023FD96740060DCB9 /* CloudKitObject.swift */; };
+		B33620F023FD96740060DCB9 /* CloudKitPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620D223FD96740060DCB9 /* CloudKitPublisher.swift */; };
+		B33620F123FD96740060DCB9 /* CloudKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620D423FD96740060DCB9 /* CloudKitView.swift */; };
+		B33620F323FD96740060DCB9 /* HealthKitObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620D823FD96740060DCB9 /* HealthKitObject.swift */; };
+		B33620F423FD96740060DCB9 /* ObservableQueryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620DA23FD96740060DCB9 /* ObservableQueryPublisher.swift */; };
+		B33620F523FD96740060DCB9 /* HealthKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620DC23FD96740060DCB9 /* HealthKitView.swift */; };
+		B33620F623FD96740060DCB9 /* CoreLocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620DF23FD96740060DCB9 /* CoreLocationObject.swift */; };
+		B33620F823FD96740060DCB9 /* CLLocationManagerPublishable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620E223FD96740060DCB9 /* CLLocationManagerPublishable.swift */; };
+		B33620F923FD96740060DCB9 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620E423FD96740060DCB9 /* LocationView.swift */; };
+		B33620FA23FD96740060DCB9 /* UserNotificationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620E623FD96740060DCB9 /* UserNotificationObject.swift */; };
+		B33620FB23FD96740060DCB9 /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620E923FD96740060DCB9 /* UNUserNotificationCenter.swift */; };
+		B33620FC23FD96740060DCB9 /* UserNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620EB23FD96740060DCB9 /* UserNotificationView.swift */; };
 		B3DBA23323FB40FB002314ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA23223FB40FB002314ED /* AppDelegate.swift */; };
 		B3DBA23523FB40FB002314ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA23423FB40FB002314ED /* SceneDelegate.swift */; };
 		B3DBA23823FB40FB002314ED /* apiHarvesterApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA23623FB40FB002314ED /* apiHarvesterApp.xcdatamodeld */; };
@@ -18,8 +30,6 @@
 		B3DBA23F23FB40FF002314ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3DBA23E23FB40FF002314ED /* Preview Assets.xcassets */; };
 		B3DBA24223FB40FF002314ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3DBA24023FB40FF002314ED /* LaunchScreen.storyboard */; };
 		B3DBA24D23FB4100002314ED /* apiHarvesterAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA24C23FB4100002314ED /* apiHarvesterAppTests.swift */; };
-		B3DBA25823FB4181002314ED /* HealthKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA25723FB4181002314ED /* HealthKitView.swift */; };
-		B3DBA25A23FB4794002314ED /* UserDefaultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA25923FB4794002314ED /* UserDefaultsView.swift */; };
 		B3F24AD623FB6BE500D322CB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F24AD523FB6BE500D322CB /* HealthKit.framework */; };
 		B3F24AD823FB6BEF00D322CB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F24AD723FB6BEF00D322CB /* CloudKit.framework */; };
 /* End PBXBuildFile section */
@@ -35,9 +45,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B33DCDC723FCB6B90063CBA9 /* CloudKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitView.swift; sourceTree = "<group>"; };
-		B33DCDC923FCB8690063CBA9 /* UserNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationView.swift; sourceTree = "<group>"; };
-		B3BD2E2B23FC806700A1BE45 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		B33620C923FD96740060DCB9 /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		B33620CC23FD96740060DCB9 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		B33620CE23FD96740060DCB9 /* UserDefaultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsView.swift; sourceTree = "<group>"; };
+		B33620D023FD96740060DCB9 /* CloudKitObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitObject.swift; sourceTree = "<group>"; };
+		B33620D223FD96740060DCB9 /* CloudKitPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitPublisher.swift; sourceTree = "<group>"; };
+		B33620D423FD96740060DCB9 /* CloudKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitView.swift; sourceTree = "<group>"; };
+		B33620D823FD96740060DCB9 /* HealthKitObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitObject.swift; sourceTree = "<group>"; };
+		B33620DA23FD96740060DCB9 /* ObservableQueryPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableQueryPublisher.swift; sourceTree = "<group>"; };
+		B33620DC23FD96740060DCB9 /* HealthKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitView.swift; sourceTree = "<group>"; };
+		B33620DF23FD96740060DCB9 /* CoreLocationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationObject.swift; sourceTree = "<group>"; };
+		B33620E223FD96740060DCB9 /* CLLocationManagerPublishable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManagerPublishable.swift; sourceTree = "<group>"; };
+		B33620E423FD96740060DCB9 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		B33620E623FD96740060DCB9 /* UserNotificationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationObject.swift; sourceTree = "<group>"; };
+		B33620E923FD96740060DCB9 /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
+		B33620EB23FD96740060DCB9 /* UserNotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationView.swift; sourceTree = "<group>"; };
 		B3DBA22F23FB40FB002314ED /* CombineAPIHarvesterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineAPIHarvesterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3DBA23223FB40FB002314ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3DBA23423FB40FB002314ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,8 +72,6 @@
 		B3DBA24823FB4100002314ED /* CombineAPIHarvesterAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineAPIHarvesterAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3DBA24C23FB4100002314ED /* apiHarvesterAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiHarvesterAppTests.swift; sourceTree = "<group>"; };
 		B3DBA24E23FB4100002314ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B3DBA25723FB4181002314ED /* HealthKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitView.swift; sourceTree = "<group>"; };
-		B3DBA25923FB4794002314ED /* UserDefaultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsView.swift; sourceTree = "<group>"; };
 		B3F24AD323FB6BE500D322CB /* CombineAPIHarvesterApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CombineAPIHarvesterApp.entitlements; sourceTree = "<group>"; };
 		B3F24AD523FB6BE500D322CB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B3F24AD723FB6BEF00D322CB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -77,44 +97,186 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B33620B123FD94B80060DCB9 /* CoreLocation */ = {
+		B33620C723FD96740060DCB9 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
-				B3BD2E2B23FC806700A1BE45 /* LocationView.swift */,
+				B33620C823FD96740060DCB9 /* UserDefaults */,
+				B33620CF23FD96740060DCB9 /* CloudKit */,
+				B33620D523FD96740060DCB9 /* HealthKit */,
+				B33620DD23FD96740060DCB9 /* CoreLocation */,
+				B33620E523FD96740060DCB9 /* UserNotifications */,
 			);
-			path = CoreLocation;
+			path = APIs;
 			sourceTree = "<group>";
 		};
-		B33620B223FD94C00060DCB9 /* CloudKit */ = {
+		B33620C823FD96740060DCB9 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
-				B33DCDC723FCB6B90063CBA9 /* CloudKitView.swift */,
+				B33620CA23FD96740060DCB9 /* Objects */,
+				B33620CB23FD96740060DCB9 /* Publishers */,
+				B33620CD23FD96740060DCB9 /* Views */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		B33620CA23FD96740060DCB9 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B33620C923FD96740060DCB9 /* UserDefault.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		B33620CB23FD96740060DCB9 /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				B33620CC23FD96740060DCB9 /* UserDefaults.swift */,
+			);
+			path = Publishers;
+			sourceTree = "<group>";
+		};
+		B33620CD23FD96740060DCB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B33620CE23FD96740060DCB9 /* UserDefaultsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B33620CF23FD96740060DCB9 /* CloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				B33620FD23FD968F0060DCB9 /* Objects */,
+				B33620D123FD96740060DCB9 /* Publishers */,
+				B33620D323FD96740060DCB9 /* Views */,
 			);
 			path = CloudKit;
 			sourceTree = "<group>";
 		};
-		B33620B323FD94C70060DCB9 /* UserNotifications */ = {
+		B33620D123FD96740060DCB9 /* Publishers */ = {
 			isa = PBXGroup;
 			children = (
-				B33DCDC923FCB8690063CBA9 /* UserNotificationView.swift */,
+				B33620D223FD96740060DCB9 /* CloudKitPublisher.swift */,
 			);
-			path = UserNotifications;
+			path = Publishers;
 			sourceTree = "<group>";
 		};
-		B33620B423FD94D10060DCB9 /* HealthKit */ = {
+		B33620D323FD96740060DCB9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B3DBA25723FB4181002314ED /* HealthKitView.swift */,
+				B33620D423FD96740060DCB9 /* CloudKitView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B33620D523FD96740060DCB9 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				B33620D723FD96740060DCB9 /* Objects */,
+				B33620D923FD96740060DCB9 /* Publishers */,
+				B33620DB23FD96740060DCB9 /* Views */,
 			);
 			path = HealthKit;
 			sourceTree = "<group>";
 		};
-		B33620B523FD94D80060DCB9 /* UserDefaults */ = {
+		B33620D723FD96740060DCB9 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				B3DBA25923FB4794002314ED /* UserDefaultsView.swift */,
+				B33620D823FD96740060DCB9 /* HealthKitObject.swift */,
 			);
-			path = UserDefaults;
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		B33620D923FD96740060DCB9 /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				B33620DA23FD96740060DCB9 /* ObservableQueryPublisher.swift */,
+			);
+			path = Publishers;
+			sourceTree = "<group>";
+		};
+		B33620DB23FD96740060DCB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B33620DC23FD96740060DCB9 /* HealthKitView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B33620DD23FD96740060DCB9 /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				B33620DE23FD96740060DCB9 /* Objects */,
+				B33620E123FD96740060DCB9 /* Publishers */,
+				B33620E323FD96740060DCB9 /* Views */,
+			);
+			path = CoreLocation;
+			sourceTree = "<group>";
+		};
+		B33620DE23FD96740060DCB9 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B33620DF23FD96740060DCB9 /* CoreLocationObject.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		B33620E123FD96740060DCB9 /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				B33620E223FD96740060DCB9 /* CLLocationManagerPublishable.swift */,
+			);
+			path = Publishers;
+			sourceTree = "<group>";
+		};
+		B33620E323FD96740060DCB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B33620E423FD96740060DCB9 /* LocationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B33620E523FD96740060DCB9 /* UserNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				B33620E723FD96740060DCB9 /* Objects */,
+				B33620E823FD96740060DCB9 /* Publishers */,
+				B33620EA23FD96740060DCB9 /* Views */,
+			);
+			path = UserNotifications;
+			sourceTree = "<group>";
+		};
+		B33620E723FD96740060DCB9 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B33620E623FD96740060DCB9 /* UserNotificationObject.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		B33620E823FD96740060DCB9 /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				B33620E923FD96740060DCB9 /* UNUserNotificationCenter.swift */,
+			);
+			path = Publishers;
+			sourceTree = "<group>";
+		};
+		B33620EA23FD96740060DCB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B33620EB23FD96740060DCB9 /* UserNotificationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B33620FD23FD968F0060DCB9 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B33620D023FD96740060DCB9 /* CloudKitObject.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		B3DBA22623FB40FB002314ED = {
@@ -140,6 +302,7 @@
 		B3DBA23123FB40FB002314ED /* apiHarvesterApp */ = {
 			isa = PBXGroup;
 			children = (
+				B33620C723FD96740060DCB9 /* APIs */,
 				B3DBA23223FB40FB002314ED /* AppDelegate.swift */,
 				B3DBA23423FB40FB002314ED /* SceneDelegate.swift */,
 				B3DBA23923FB40FB002314ED /* ContentView.swift */,
@@ -148,11 +311,6 @@
 				B3DBA24323FB40FF002314ED /* Info.plist */,
 				B3DBA23623FB40FB002314ED /* apiHarvesterApp.xcdatamodeld */,
 				B3DBA23D23FB40FF002314ED /* Preview Content */,
-				B33620B423FD94D10060DCB9 /* HealthKit */,
-				B33620B523FD94D80060DCB9 /* UserDefaults */,
-				B33620B123FD94B80060DCB9 /* CoreLocation */,
-				B33620B223FD94C00060DCB9 /* CloudKit */,
-				B33620B323FD94C70060DCB9 /* UserNotifications */,
 			);
 			path = apiHarvesterApp;
 			sourceTree = "<group>";
@@ -325,15 +483,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B33620EC23FD96740060DCB9 /* UserDefault.swift in Sources */,
 				B3DBA23823FB40FB002314ED /* apiHarvesterApp.xcdatamodeld in Sources */,
+				B33620F423FD96740060DCB9 /* ObservableQueryPublisher.swift in Sources */,
 				B3DBA23323FB40FB002314ED /* AppDelegate.swift in Sources */,
-				B3DBA25823FB4181002314ED /* HealthKitView.swift in Sources */,
-				B3DBA25A23FB4794002314ED /* UserDefaultsView.swift in Sources */,
-				B3BD2E2C23FC806700A1BE45 /* LocationView.swift in Sources */,
+				B33620F823FD96740060DCB9 /* CLLocationManagerPublishable.swift in Sources */,
+				B33620F923FD96740060DCB9 /* LocationView.swift in Sources */,
+				B33620F523FD96740060DCB9 /* HealthKitView.swift in Sources */,
+				B33620EE23FD96740060DCB9 /* UserDefaultsView.swift in Sources */,
+				B33620F623FD96740060DCB9 /* CoreLocationObject.swift in Sources */,
+				B33620ED23FD96740060DCB9 /* UserDefaults.swift in Sources */,
 				B3DBA23A23FB40FB002314ED /* ContentView.swift in Sources */,
+				B33620F323FD96740060DCB9 /* HealthKitObject.swift in Sources */,
+				B33620FB23FD96740060DCB9 /* UNUserNotificationCenter.swift in Sources */,
 				B3DBA23523FB40FB002314ED /* SceneDelegate.swift in Sources */,
-				B33DCDCA23FCB8690063CBA9 /* UserNotificationView.swift in Sources */,
-				B33DCDC823FCB6B90063CBA9 /* CloudKitView.swift in Sources */,
+				B33620FA23FD96740060DCB9 /* UserNotificationObject.swift in Sources */,
+				B33620F123FD96740060DCB9 /* CloudKitView.swift in Sources */,
+				B33620F023FD96740060DCB9 /* CloudKitPublisher.swift in Sources */,
+				B33620FC23FD96740060DCB9 /* UserNotificationView.swift in Sources */,
+				B33620EF23FD96740060DCB9 /* CloudKitObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
