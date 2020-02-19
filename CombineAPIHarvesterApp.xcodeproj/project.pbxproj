@@ -77,6 +77,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B33620B123FD94B80060DCB9 /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				B3BD2E2B23FC806700A1BE45 /* LocationView.swift */,
+			);
+			path = CoreLocation;
+			sourceTree = "<group>";
+		};
+		B33620B223FD94C00060DCB9 /* CloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				B33DCDC723FCB6B90063CBA9 /* CloudKitView.swift */,
+			);
+			path = CloudKit;
+			sourceTree = "<group>";
+		};
+		B33620B323FD94C70060DCB9 /* UserNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				B33DCDC923FCB8690063CBA9 /* UserNotificationView.swift */,
+			);
+			path = UserNotifications;
+			sourceTree = "<group>";
+		};
+		B33620B423FD94D10060DCB9 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				B3DBA25723FB4181002314ED /* HealthKitView.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		B33620B523FD94D80060DCB9 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				B3DBA25923FB4794002314ED /* UserDefaultsView.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		B3DBA22623FB40FB002314ED = {
 			isa = PBXGroup;
 			children = (
@@ -108,11 +148,11 @@
 				B3DBA24323FB40FF002314ED /* Info.plist */,
 				B3DBA23623FB40FB002314ED /* apiHarvesterApp.xcdatamodeld */,
 				B3DBA23D23FB40FF002314ED /* Preview Content */,
-				B3DBA25723FB4181002314ED /* HealthKitView.swift */,
-				B3DBA25923FB4794002314ED /* UserDefaultsView.swift */,
-				B3BD2E2B23FC806700A1BE45 /* LocationView.swift */,
-				B33DCDC723FCB6B90063CBA9 /* CloudKitView.swift */,
-				B33DCDC923FCB8690063CBA9 /* UserNotificationView.swift */,
+				B33620B423FD94D10060DCB9 /* HealthKit */,
+				B33620B523FD94D80060DCB9 /* UserDefaults */,
+				B33620B123FD94B80060DCB9 /* CoreLocation */,
+				B33620B223FD94C00060DCB9 /* CloudKit */,
+				B33620B323FD94C70060DCB9 /* UserNotifications */,
 			);
 			path = apiHarvesterApp;
 			sourceTree = "<group>";
