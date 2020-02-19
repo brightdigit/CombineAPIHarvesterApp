@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B33620EC23FD96740060DCB9 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620C923FD96740060DCB9 /* UserDefault.swift */; };
-		B33620ED23FD96740060DCB9 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620CC23FD96740060DCB9 /* UserDefaults.swift */; };
 		B33620EE23FD96740060DCB9 /* UserDefaultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620CE23FD96740060DCB9 /* UserDefaultsView.swift */; };
 		B33620EF23FD96740060DCB9 /* CloudKitObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620D023FD96740060DCB9 /* CloudKitObject.swift */; };
-		B33620F023FD96740060DCB9 /* CloudKitPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620D223FD96740060DCB9 /* CloudKitPublisher.swift */; };
 		B33620F123FD96740060DCB9 /* CloudKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620D423FD96740060DCB9 /* CloudKitView.swift */; };
 		B33620F323FD96740060DCB9 /* HealthKitObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620D823FD96740060DCB9 /* HealthKitObject.swift */; };
 		B33620F423FD96740060DCB9 /* ObservableQueryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620DA23FD96740060DCB9 /* ObservableQueryPublisher.swift */; };
@@ -46,10 +44,8 @@
 
 /* Begin PBXFileReference section */
 		B33620C923FD96740060DCB9 /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
-		B33620CC23FD96740060DCB9 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		B33620CE23FD96740060DCB9 /* UserDefaultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsView.swift; sourceTree = "<group>"; };
 		B33620D023FD96740060DCB9 /* CloudKitObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitObject.swift; sourceTree = "<group>"; };
-		B33620D223FD96740060DCB9 /* CloudKitPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitPublisher.swift; sourceTree = "<group>"; };
 		B33620D423FD96740060DCB9 /* CloudKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitView.swift; sourceTree = "<group>"; };
 		B33620D823FD96740060DCB9 /* HealthKitObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitObject.swift; sourceTree = "<group>"; };
 		B33620DA23FD96740060DCB9 /* ObservableQueryPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableQueryPublisher.swift; sourceTree = "<group>"; };
@@ -113,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				B33620CA23FD96740060DCB9 /* Objects */,
-				B33620CB23FD96740060DCB9 /* Publishers */,
 				B33620CD23FD96740060DCB9 /* Views */,
 			);
 			path = UserDefaults;
@@ -125,14 +120,6 @@
 				B33620C923FD96740060DCB9 /* UserDefault.swift */,
 			);
 			path = Objects;
-			sourceTree = "<group>";
-		};
-		B33620CB23FD96740060DCB9 /* Publishers */ = {
-			isa = PBXGroup;
-			children = (
-				B33620CC23FD96740060DCB9 /* UserDefaults.swift */,
-			);
-			path = Publishers;
 			sourceTree = "<group>";
 		};
 		B33620CD23FD96740060DCB9 /* Views */ = {
@@ -156,7 +143,6 @@
 		B33620D123FD96740060DCB9 /* Publishers */ = {
 			isa = PBXGroup;
 			children = (
-				B33620D223FD96740060DCB9 /* CloudKitPublisher.swift */,
 			);
 			path = Publishers;
 			sourceTree = "<group>";
@@ -492,14 +478,12 @@
 				B33620F523FD96740060DCB9 /* HealthKitView.swift in Sources */,
 				B33620EE23FD96740060DCB9 /* UserDefaultsView.swift in Sources */,
 				B33620F623FD96740060DCB9 /* CoreLocationObject.swift in Sources */,
-				B33620ED23FD96740060DCB9 /* UserDefaults.swift in Sources */,
 				B3DBA23A23FB40FB002314ED /* ContentView.swift in Sources */,
 				B33620F323FD96740060DCB9 /* HealthKitObject.swift in Sources */,
 				B33620FB23FD96740060DCB9 /* UNUserNotificationCenter.swift in Sources */,
 				B3DBA23523FB40FB002314ED /* SceneDelegate.swift in Sources */,
 				B33620FA23FD96740060DCB9 /* UserNotificationObject.swift in Sources */,
 				B33620F123FD96740060DCB9 /* CloudKitView.swift in Sources */,
-				B33620F023FD96740060DCB9 /* CloudKitPublisher.swift in Sources */,
 				B33620FC23FD96740060DCB9 /* UserNotificationView.swift in Sources */,
 				B33620EF23FD96740060DCB9 /* CloudKitObject.swift in Sources */,
 			);

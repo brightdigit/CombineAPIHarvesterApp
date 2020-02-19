@@ -1,12 +1,4 @@
-import CloudKit
-import Combine
 import SwiftUI
-
-class CloudKitObject: ObservableObject {
-  init() {
-    let database = CKContainer.default().publicCloudDatabase
-  }
-}
 
 struct CloudKitView: View {
   var body: some View {
