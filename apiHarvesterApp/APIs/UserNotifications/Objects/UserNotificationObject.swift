@@ -2,6 +2,8 @@ import Combine
 import SwiftUI
 import UserNotifications
 
+struct EmptyError: Error {}
+
 extension Result {
 //  init(success: Success, failure: Failure?) {
 //    if let failure = failure {
@@ -11,13 +13,13 @@ extension Result {
 //    }
 //  }
 
-  init?(success: Success?, failure: Failure?) {
+  init(success: Success?, failure: Failure?, fallbackFailure: () -> Failure) {
     if let failure = failure {
       self = .failure(failure)
     } else if let success = success {
       self = .success(success)
     } else {
-      return nil
+      self = .failure(fallbackFailure())
     }
   }
 }
@@ -42,7 +44,7 @@ class UserNotificationObject: ObservableObject {
     let authRequestPublisher = requestAuthorizationTrigger.filter { $0 }.flatMap { _ in
       Future { completion in
         self.center.requestAuthorization(options: [.alert, .badge, .sound, .announcement]) {
-          completion(.success(Result(success: $0, failure: $1)))
+          completion(.success(Result(success: $0, failure: $1, fallbackFailure: { EmptyError() })))
         }
       }
     }

@@ -20,7 +20,7 @@ struct UserDefault<Value> {
   }
 }
 
-extension UserDefaults {
+public extension UserDefaults {
   @objc var healthKitQueried: Bool {
     get {
       return bool(forKey: "healthKitQueried")
@@ -36,6 +36,15 @@ extension UserDefaults {
     }
     set {
       set(newValue, forKey: "healthKitAuthorized")
+    }
+  }
+
+  @objc var cloudKitSubscription: String? {
+    get {
+      return string(forKey: "cloudKitSubscription")
+    }
+    set {
+      set(newValue, forKey: "cloudKitSubscription")
     }
   }
 }
