@@ -28,6 +28,8 @@ extension UNNotificationSetting: CustomStringConvertible {
       return "enabled"
     case .notSupported:
       return "notSupported"
+    @unknown default:
+      return "notSupported"
     }
   }
 }

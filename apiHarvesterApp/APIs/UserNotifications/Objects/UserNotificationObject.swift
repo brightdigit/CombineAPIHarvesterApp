@@ -3,11 +3,21 @@ import SwiftUI
 import UserNotifications
 
 extension Result {
-  init(success: Success, failure: Failure?) {
+//  init(success: Success, failure: Failure?) {
+//    if let failure = failure {
+//      self = .failure(failure)
+//    } else {
+//      self = .success(success)
+//    }
+//  }
+
+  init?(success: Success?, failure: Failure?) {
     if let failure = failure {
       self = .failure(failure)
-    } else {
+    } else if let success = success {
       self = .success(success)
+    } else {
+      return nil
     }
   }
 }
