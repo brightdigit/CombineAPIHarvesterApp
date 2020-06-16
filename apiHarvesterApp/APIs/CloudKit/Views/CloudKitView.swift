@@ -1,21 +1,21 @@
 import SwiftUI
-public extension UIColor {
-  convenience init<T>(rgbValue: T, alpha: CGFloat = 1) where T: BinaryInteger {
+public extension Color {
+  init<T>(rgbValue: T) where T: BinaryInteger {
     guard rgbValue > 0 else {
-      self.init(red: 0, green: 0, blue: 0, alpha: alpha)
+      self.init(red: 0, green: 0, blue: 0)
       return
     }
 
     guard rgbValue < 0xFFFFFF else {
-      self.init(red: 1, green: 1, blue: 1, alpha: alpha)
+      self.init(red: 1, green: 1, blue: 1)
       return
     }
 
-    let red: CGFloat = CGFloat((rgbValue & 0xFF0000) >> 16) / 0xFF
-    let green: CGFloat = CGFloat((rgbValue & 0x00FF00) >> 8) / 0xFF
-    let blue: CGFloat = CGFloat(rgbValue & 0x0000FF) / 0xFF
+    let red: Double = Double((rgbValue & 0xFF0000) >> 16) / 0xFF
+    let green: Double = Double((rgbValue & 0x00FF00) >> 8) / 0xFF
+    let blue: Double = Double(rgbValue & 0x0000FF) / 0xFF
 
-    self.init(red: red, green: green, blue: blue, alpha: alpha)
+    self.init(red: red, green: green, blue: blue)
   }
 }
 
@@ -45,23 +45,30 @@ struct GridStack<Content: View>: View {
 
 struct CloudKitView: View {
   @EnvironmentObject var colorsObject: CloudKitObject
-  @State var color: Int?
+  // @State var color: Int?
 
   let rows = 6
   let columns = 3
 
-  let colors = (0 ... (6 * 3)).map { _ in
-    Int.random(in: 0 ... 0xFFFFFF)
-  }
+//  let colors = (0 ... (6 * 3)).map { _ in
+//    Int.random(in: 0 ... 0xFFFFFF)
+//  }
 
   public var body: some View {
-    GridStack(rows: self.rows, columns: self.columns) { row, col in
-      Rectangle().foregroundColor(
-        Color(
-          UIColor(rgbValue: self.colors[row * 3 + col])
-        )
-      )
+    GridStack(rows: self.rows, columns: self.columns, content: viewFor)
+  }
+
+  func viewFor(row: Int, column: Int) -> some View {
+    let index = column + row * columns
+    let foundColor: Color? = colorsObject.colors.flatMap {
+      try? $0.get()
+    }.flatMap { colors in
+      guard colors.count > index else {
+        return nil
+      }
+      return colors[index]
     }
+    return Rectangle().foregroundColor(foundColor)
   }
 }
 

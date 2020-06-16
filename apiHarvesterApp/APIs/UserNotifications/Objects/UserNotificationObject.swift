@@ -24,10 +24,18 @@ extension Result {
   }
 }
 
+class UserNotifcationListener: NSObject, UNUserNotificationCenterDelegate {
+  func userNotificationCenter(_: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler _: @escaping (UNNotificationPresentationOptions) -> Void) {
+    dump(notification)
+  }
+}
+
 class UserNotificationObject: ObservableObject {
   let center: UNUserNotificationCenter
   var token = PassthroughSubject<UUID, Never>()
   var requestAuthorizationTrigger = PassthroughSubject<Bool, Never>()
+
+  let listener = UserNotifcationListener()
 
   var settingsCancellable: AnyCancellable!
   var authorizationCancellable: AnyCancellable!
@@ -39,6 +47,7 @@ class UserNotificationObject: ObservableObject {
   init() {
     let center = UNUserNotificationCenter.current()
     self.center = center
+    center.delegate = listener
     settingsCancellable = center.settingsPublisher(basedOn: token).map { $0 as UNNotificationSettings? }.receive(on: DispatchQueue.main).assign(to: \.settings, on: self)
 
     let authRequestPublisher = requestAuthorizationTrigger.filter { $0 }.flatMap { _ in

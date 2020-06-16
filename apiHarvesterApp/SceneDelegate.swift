@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let contentView = ContentView().environment(\.managedObjectContext, context)
       .environmentObject(HealthKitObject()).environmentObject(CoreLocationObject())
       .environmentObject(UserNotificationObject())
+      .environmentObject(CloudKitObject())
 
     // Use a UIHostingController as window root view controller.
     if let windowScene = scene as? UIWindowScene {
