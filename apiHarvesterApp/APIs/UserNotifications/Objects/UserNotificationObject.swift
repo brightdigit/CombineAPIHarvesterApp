@@ -24,16 +24,27 @@ extension Result {
   }
 }
 
+protocol UserNotifcationListenerDelegate {
+  func listener(_ listener: UserNotifcationListener, willPresentNotification notification: UNNotification)
+}
+
 class UserNotifcationListener: NSObject, UNUserNotificationCenterDelegate {
-  func userNotificationCenter(_: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler _: @escaping (UNNotificationPresentationOptions) -> Void) {
-    dump(notification)
+  var delegate: UserNotifcationListenerDelegate?
+  func userNotificationCenter(_: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler handler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    delegate?.listener(self, willPresentNotification: notification)
+    handler([])
   }
 }
 
-class UserNotificationObject: ObservableObject {
+class UserNotificationObject: ObservableObject, UserNotifcationListenerDelegate {
+  func listener(_: UserNotifcationListener, willPresentNotification notification: UNNotification) {
+    notificationPublisher.send(notification)
+  }
+
   let center: UNUserNotificationCenter
   var token = PassthroughSubject<UUID, Never>()
   var requestAuthorizationTrigger = PassthroughSubject<Bool, Never>()
+  var notificationPublisher = PassthroughSubject<UNNotification, Never>()
 
   let listener = UserNotifcationListener()
 
@@ -48,6 +59,7 @@ class UserNotificationObject: ObservableObject {
     let center = UNUserNotificationCenter.current()
     self.center = center
     center.delegate = listener
+    listener.delegate = self
     settingsCancellable = center.settingsPublisher(basedOn: token).map { $0 as UNNotificationSettings? }.receive(on: DispatchQueue.main).assign(to: \.settings, on: self)
 
     let authRequestPublisher = requestAuthorizationTrigger.filter { $0 }.flatMap { _ in

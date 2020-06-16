@@ -1,8 +1,10 @@
+import Combine
 import SwiftUI
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   var window: UIWindow?
+  var notificationUpdatesCancellable: AnyCancellable!
 
   func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -16,10 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
     // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
+    let cloudKitObject = CloudKitObject()
+    let userNotificationObject = UserNotificationObject()
+
+    notificationUpdatesCancellable = userNotificationObject.notificationPublisher.sink { _ in
+      cloudKitObject.beginQuery()
+    }
     let contentView = ContentView().environment(\.managedObjectContext, context)
       .environmentObject(HealthKitObject()).environmentObject(CoreLocationObject())
-      .environmentObject(UserNotificationObject())
-      .environmentObject(CloudKitObject())
+      .environmentObject(userNotificationObject)
+      .environmentObject(cloudKitObject)
 
     // Use a UIHostingController as window root view controller.
     if let windowScene = scene as? UIWindowScene {
