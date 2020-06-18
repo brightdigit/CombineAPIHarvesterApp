@@ -20,6 +20,8 @@
 		B33620FA23FD96740060DCB9 /* UserNotificationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620E623FD96740060DCB9 /* UserNotificationObject.swift */; };
 		B33620FB23FD96740060DCB9 /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620E923FD96740060DCB9 /* UNUserNotificationCenter.swift */; };
 		B33620FC23FD96740060DCB9 /* UserNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620EB23FD96740060DCB9 /* UserNotificationView.swift */; };
+		B37D04AF249BBE2100B3FE06 /* BluetoothView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37D04AE249BBE2100B3FE06 /* BluetoothView.swift */; };
+		B37D04B1249BBE3100B3FE06 /* BluetoothObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37D04B0249BBE3100B3FE06 /* BluetoothObject.swift */; };
 		B3DBA23323FB40FB002314ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA23223FB40FB002314ED /* AppDelegate.swift */; };
 		B3DBA23523FB40FB002314ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA23423FB40FB002314ED /* SceneDelegate.swift */; };
 		B3DBA23823FB40FB002314ED /* apiHarvesterApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3DBA23623FB40FB002314ED /* apiHarvesterApp.xcdatamodeld */; };
@@ -56,6 +58,8 @@
 		B33620E623FD96740060DCB9 /* UserNotificationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationObject.swift; sourceTree = "<group>"; };
 		B33620E923FD96740060DCB9 /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
 		B33620EB23FD96740060DCB9 /* UserNotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationView.swift; sourceTree = "<group>"; };
+		B37D04AE249BBE2100B3FE06 /* BluetoothView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothView.swift; sourceTree = "<group>"; };
+		B37D04B0249BBE3100B3FE06 /* BluetoothObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothObject.swift; sourceTree = "<group>"; };
 		B3DBA22F23FB40FB002314ED /* CombineAPIHarvesterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineAPIHarvesterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3DBA23223FB40FB002314ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3DBA23423FB40FB002314ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 		B33620C723FD96740060DCB9 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
+				B37D04AB249BB41C00B3FE06 /* Bluetooth */,
 				B33620C823FD96740060DCB9 /* UserDefaults */,
 				B33620CF23FD96740060DCB9 /* CloudKit */,
 				B33620D523FD96740060DCB9 /* HealthKit */,
@@ -263,6 +268,31 @@
 				B33620D023FD96740060DCB9 /* CloudKitObject.swift */,
 			);
 			path = Objects;
+			sourceTree = "<group>";
+		};
+		B37D04AB249BB41C00B3FE06 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				B37D04AD249BB43F00B3FE06 /* Views */,
+				B37D04AC249BB43000B3FE06 /* Objects */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		B37D04AC249BB43000B3FE06 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B37D04B0249BBE3100B3FE06 /* BluetoothObject.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		B37D04AD249BB43F00B3FE06 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B37D04AE249BBE2100B3FE06 /* BluetoothView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B3DBA22623FB40FB002314ED = {
@@ -474,8 +504,10 @@
 				B33620F423FD96740060DCB9 /* ObservableQueryPublisher.swift in Sources */,
 				B3DBA23323FB40FB002314ED /* AppDelegate.swift in Sources */,
 				B33620F823FD96740060DCB9 /* CLLocationManagerPublishable.swift in Sources */,
+				B37D04B1249BBE3100B3FE06 /* BluetoothObject.swift in Sources */,
 				B33620F923FD96740060DCB9 /* LocationView.swift in Sources */,
 				B33620F523FD96740060DCB9 /* HealthKitView.swift in Sources */,
+				B37D04AF249BBE2100B3FE06 /* BluetoothView.swift in Sources */,
 				B33620EE23FD96740060DCB9 /* UserDefaultsView.swift in Sources */,
 				B33620F623FD96740060DCB9 /* CoreLocationObject.swift in Sources */,
 				B3DBA23A23FB40FB002314ED /* ContentView.swift in Sources */,

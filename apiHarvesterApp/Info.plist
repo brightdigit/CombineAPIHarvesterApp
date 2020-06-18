@@ -20,6 +20,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>This app uses bluetooth to demonstrate the Combine framework.</string>
 	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
 	<string>In order to see your health statistics, we need to permission to read the values.</string>
 	<key>NSHealthShareUsageDescription</key>
