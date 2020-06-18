@@ -45,12 +45,12 @@ struct ContentView: View {
 //            Text("Core Data")
 //          }
 //        }.tag(0)
-//        HealthKitView().tabItem {
-//          VStack{
-//            Image(systemName: "antenna.radiowaves.left.and.right")
-//            Text("Connectivity")
-//          }
-//        }.tag(0)
+      BluetoothView().tabItem {
+        VStack {
+          Image(systemName: "antenna.radiowaves.left.and.right")
+          Text("Bluetooth")
+        }
+      }.tag(6)
 
 //        HealthKitView().tabItem {
 //          VStack{

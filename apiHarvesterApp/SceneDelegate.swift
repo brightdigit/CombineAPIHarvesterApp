@@ -28,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       .environmentObject(HealthKitObject()).environmentObject(CoreLocationObject())
       .environmentObject(userNotificationObject)
       .environmentObject(cloudKitObject)
+      .environmentObject(BluetoothObject())
 
     // Use a UIHostingController as window root view controller.
     if let windowScene = scene as? UIWindowScene {
