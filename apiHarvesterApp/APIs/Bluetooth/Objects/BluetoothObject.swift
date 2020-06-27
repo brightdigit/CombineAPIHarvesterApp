@@ -1,3 +1,4 @@
+import Combine
 import CoreBluetooth
 import Foundation
 
@@ -156,9 +157,15 @@ struct BluetoothDevice: Identifiable {
   public private(set) var rssi: Int
   public private(set) var advertisementData: [String: Any]?
   public let id: UUID
+  public private(set) var name: String?
+
+  public var title: String {
+    return name ?? id.uuidString
+  }
 
   init(peripheral: CBPeripheral, rssi: NSNumber, advertisementData: [String: Any]?) {
     id = peripheral.identifier
+    name = peripheral.name
     self.advertisementData = advertisementData
     self.rssi = rssi.intValue
 
@@ -234,29 +241,30 @@ class BluetoothObject: ObservableObject, BluetoothManagerListenerDelegate {
   }
 
   func discoveredDevice(_ device: BluetoothDevice) {
-    devices.replace(device)
+    directory.replace(device)
+    dump(device)
   }
 
   func services(_ result: Result<[BluetoothService], Error>, forPerpheral perpheralIdentifier: UUID) {
-    devices[perpheralIdentifier]?.services = result.map(
+    directory[perpheralIdentifier]?.services = result.map(
       KeyedDictionary.init
     )
   }
 
   func characteristics(_ result: Result<[BluetoothCharacteristic], Error>, forService serviceIdentifier: UUID, withPerpheral perpheralIdentifier: UUID) {
-    devices[perpheralIdentifier]?.services?.withSuccess?[serviceIdentifier]?.characteristics = result.map(KeyedDictionary.init)
+    directory[perpheralIdentifier]?.services?.withSuccess?[serviceIdentifier]?.characteristics = result.map(KeyedDictionary.init)
   }
 
   func descriptors(_ result: Result<[BluetoothDescriptor], Error>, forCharacteristic characteristicIdentifier: UUID, withService serviceIdentifier: UUID, andPerpheral perpheralIdentifier: UUID) {
-    devices[perpheralIdentifier]?.services?.withSuccess?[serviceIdentifier]?.characteristics?.withSuccess?[characteristicIdentifier]?.descriptiors = result.map(KeyedDictionary.init)
+    directory[perpheralIdentifier]?.services?.withSuccess?[serviceIdentifier]?.characteristics?.withSuccess?[characteristicIdentifier]?.descriptiors = result.map(KeyedDictionary.init)
   }
 
   func value(_ result: Result<Data, Error>, forCharacteristic characteristicIdentifier: UUID, withService serviceIdentifier: UUID, andPerpheral perpheralIdentifier: UUID) {
-    devices[perpheralIdentifier]?.services?.withSuccess?[serviceIdentifier]?.characteristics?.withSuccess?[characteristicIdentifier]?.value = result
+    directory[perpheralIdentifier]?.services?.withSuccess?[serviceIdentifier]?.characteristics?.withSuccess?[characteristicIdentifier]?.value = result
   }
 
   func value(_ result: Result<Any, Error>, forDescriptor descriptorIdentifier: UUID, fromCharacteristic characteristicIdentifier: UUID, withService serviceIdentifier: UUID, andPerpheral perpheralIdentifier: UUID) {
-    devices[perpheralIdentifier]?.services?.withSuccess?[serviceIdentifier]?.characteristics?.withSuccess?[characteristicIdentifier]?.descriptiors?.withSuccess?[descriptorIdentifier]?.value = result
+    directory[perpheralIdentifier]?.services?.withSuccess?[serviceIdentifier]?.characteristics?.withSuccess?[characteristicIdentifier]?.descriptiors?.withSuccess?[descriptorIdentifier]?.value = result
   }
 
   let manager: CBCentralManager
@@ -264,11 +272,16 @@ class BluetoothObject: ObservableObject, BluetoothManagerListenerDelegate {
 
   @Published var state: CBManagerState?
 
-  @Published var devices = KeyedDictionary<BluetoothDevice>()
+  @Published var directory = KeyedDictionary<BluetoothDevice>()
+  @Published var devices = [BluetoothDevice]()
+
+  var cancellables = [AnyCancellable]()
   init() {
     manager = CBCentralManager()
     listener = BluetoothManagerListener()
     manager.delegate = listener
     listener.delegate = self
+
+    $directory.map(\.values).receive(on: DispatchQueue.main).assign(to: \.devices, on: self).store(in: &cancellables)
   }
 }

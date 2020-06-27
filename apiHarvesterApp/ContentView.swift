@@ -3,6 +3,12 @@ import SwiftUI
 struct ContentView: View {
   var body: some View {
     TabView {
+      BluetoothView().tabItem {
+        VStack {
+          Image(systemName: "antenna.radiowaves.left.and.right")
+          Text("Bluetooth")
+        }
+      }.tag(6)
       UserDefaultsView().tabItem {
         VStack {
           Image(systemName: "person.crop.circle.fill")
@@ -45,12 +51,6 @@ struct ContentView: View {
 //            Text("Core Data")
 //          }
 //        }.tag(0)
-      BluetoothView().tabItem {
-        VStack {
-          Image(systemName: "antenna.radiowaves.left.and.right")
-          Text("Bluetooth")
-        }
-      }.tag(6)
 
 //        HealthKitView().tabItem {
 //          VStack{
