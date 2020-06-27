@@ -2,14 +2,14 @@ import Combine
 import CoreLocation
 import SwiftUI
 
-protocol CLLocationManagerPublishableDelegate: CLLocationManagerDelegate {
+protocol CLLocationManagerCombineDelegate: CLLocationManagerDelegate {
   func authorizationPublisher() -> AnyPublisher<CLAuthorizationStatus, Never>
   func locationPublisher() -> AnyPublisher<[CLLocation], Never>
   // func headingPublisher() -> AnyPublisher<CLHeading?, Never>
   // func errorPublisher() -> AnyPublisher<Error?, Never>
 }
 
-class CLLocationManagerPublishable: NSObject, CLLocationManagerPublishableDelegate {
+class CLLocationManagerPublicist: NSObject, CLLocationManagerCombineDelegate {
   let authorizationSubject = CurrentValueSubject<CLAuthorizationStatus?, Never>(nil)
 
   let locationSubject = CurrentValueSubject<[CLLocation], Never>([CLLocation]())
@@ -51,18 +51,4 @@ class CLLocationManagerPublishable: NSObject, CLLocationManagerPublishableDelega
 //  func errorPublisher() -> AnyPublisher<Error?, Never> {
 //    return errorSubject.eraseToAnyPublisher()
 //  }
-}
-
-extension CLLocationManager {
-  func authorizationPublisher() -> AnyPublisher<CLAuthorizationStatus, Never>? {
-    return (delegate as? CLLocationManagerPublishableDelegate)?.authorizationPublisher()
-  }
-
-  func locationPublisher() -> AnyPublisher<[CLLocation], Never>? {
-    guard let delegate = self.delegate as? CLLocationManagerPublishableDelegate else {
-      return nil
-    }
-
-    return delegate.locationPublisher()
-  }
 }

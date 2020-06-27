@@ -4,7 +4,7 @@ import SwiftUI
 
 class CoreLocationObject: ObservableObject {
   let manager: CLLocationManager
-  let publishable: CLLocationManagerPublishable
+  let publishable: CLLocationManagerPublicist
 
   @Published var authorizationStatus = CLAuthorizationStatus.notDetermined
   @Published var location: CLLocation?
@@ -17,7 +17,7 @@ class CoreLocationObject: ObservableObject {
 
   init() {
     let manager = CLLocationManager()
-    let delegate = CLLocationManagerPublishable()
+    let delegate = CLLocationManagerPublicist()
 
     manager.delegate = delegate
 

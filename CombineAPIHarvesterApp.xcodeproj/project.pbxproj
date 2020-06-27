@@ -15,7 +15,7 @@
 		B33620F423FD96740060DCB9 /* ObservableQueryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620DA23FD96740060DCB9 /* ObservableQueryPublisher.swift */; };
 		B33620F523FD96740060DCB9 /* HealthKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620DC23FD96740060DCB9 /* HealthKitView.swift */; };
 		B33620F623FD96740060DCB9 /* CoreLocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620DF23FD96740060DCB9 /* CoreLocationObject.swift */; };
-		B33620F823FD96740060DCB9 /* CLLocationManagerPublishable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620E223FD96740060DCB9 /* CLLocationManagerPublishable.swift */; };
+		B33620F823FD96740060DCB9 /* CLLocationManagerPublicist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620E223FD96740060DCB9 /* CLLocationManagerPublicist.swift */; };
 		B33620F923FD96740060DCB9 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620E423FD96740060DCB9 /* LocationView.swift */; };
 		B33620FA23FD96740060DCB9 /* UserNotificationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620E623FD96740060DCB9 /* UserNotificationObject.swift */; };
 		B33620FB23FD96740060DCB9 /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33620E923FD96740060DCB9 /* UNUserNotificationCenter.swift */; };
@@ -51,7 +51,7 @@
 		B33620DA23FD96740060DCB9 /* ObservableQueryPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableQueryPublisher.swift; sourceTree = "<group>"; };
 		B33620DC23FD96740060DCB9 /* HealthKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitView.swift; sourceTree = "<group>"; };
 		B33620DF23FD96740060DCB9 /* CoreLocationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationObject.swift; sourceTree = "<group>"; };
-		B33620E223FD96740060DCB9 /* CLLocationManagerPublishable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManagerPublishable.swift; sourceTree = "<group>"; };
+		B33620E223FD96740060DCB9 /* CLLocationManagerPublicist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManagerPublicist.swift; sourceTree = "<group>"; };
 		B33620E423FD96740060DCB9 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		B33620E623FD96740060DCB9 /* UserNotificationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationObject.swift; sourceTree = "<group>"; };
 		B33620E923FD96740060DCB9 /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 		B33620E123FD96740060DCB9 /* Publishers */ = {
 			isa = PBXGroup;
 			children = (
-				B33620E223FD96740060DCB9 /* CLLocationManagerPublishable.swift */,
+				B33620E223FD96740060DCB9 /* CLLocationManagerPublicist.swift */,
 			);
 			path = Publishers;
 			sourceTree = "<group>";
@@ -473,7 +473,7 @@
 				B3DBA23823FB40FB002314ED /* apiHarvesterApp.xcdatamodeld in Sources */,
 				B33620F423FD96740060DCB9 /* ObservableQueryPublisher.swift in Sources */,
 				B3DBA23323FB40FB002314ED /* AppDelegate.swift in Sources */,
-				B33620F823FD96740060DCB9 /* CLLocationManagerPublishable.swift in Sources */,
+				B33620F823FD96740060DCB9 /* CLLocationManagerPublicist.swift in Sources */,
 				B33620F923FD96740060DCB9 /* LocationView.swift in Sources */,
 				B33620F523FD96740060DCB9 /* HealthKitView.swift in Sources */,
 				B33620EE23FD96740060DCB9 /* UserDefaultsView.swift in Sources */,

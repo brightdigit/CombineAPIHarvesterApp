@@ -22,20 +22,20 @@ extension CLAuthorizationStatus: CustomStringConvertible {
 }
 
 struct LocationView: View {
+  // CLLocationManager is basically a singleton so an EnvironmentObject ObservableObject makes sense
   @EnvironmentObject var locationObject: CoreLocationObject
+
   var body: some View {
     VStack {
-      Text("\(locationObject.authorizationStatus.description)").onTapGesture {
-        self.locationObject.authorize()
-      }
+      // use our extension method to display a description of the status
+      Text("\(locationObject.authorizationStatus.description)")
+        .onTapGesture {
+          self.locationObject.authorize()
+        }
       // use Optional.map to hide the Text if there's no location
       self.locationObject.location.map {
         Text($0.description)
       }
-
-//      self.locationObject.heading.map {
-//        Text("\($0)")
-//      }
     }
   }
 }
