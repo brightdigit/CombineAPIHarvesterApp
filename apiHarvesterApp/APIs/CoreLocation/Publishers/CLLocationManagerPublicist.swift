@@ -10,45 +10,31 @@ protocol CLLocationManagerCombineDelegate: CLLocationManagerDelegate {
 }
 
 class CLLocationManagerPublicist: NSObject, CLLocationManagerCombineDelegate {
-  let authorizationSubject = CurrentValueSubject<CLAuthorizationStatus?, Never>(nil)
+  let authorizationSubject = PassthroughSubject<CLAuthorizationStatus, Never>()
 
-  let locationSubject = CurrentValueSubject<[CLLocation], Never>([CLLocation]())
-
-  // let headingSubject = CurrentValueSubject<CLHeading?, Never>(nil)
-
-  // let errorSubject = CurrentValueSubject<Error?, Never>(nil)
+  let locationSubject = PassthroughSubject<[CLLocation], Never>()
 
   func authorizationPublisher() -> AnyPublisher<CLAuthorizationStatus, Never> {
-    return Just(CLLocationManager.authorizationStatus()).merge(with: authorizationSubject.compactMap { $0 }).eraseToAnyPublisher()
+    return Just(CLLocationManager.authorizationStatus())
+      .merge(with:
+        authorizationSubject.compactMap { $0 }
+      ).eraseToAnyPublisher()
   }
 
   func locationPublisher() -> AnyPublisher<[CLLocation], Never> {
     return locationSubject.eraseToAnyPublisher()
   }
 
-//  func headingPublisher() -> AnyPublisher<CLHeading?, Never> {
-//    return headingSubject.eraseToAnyPublisher()
-//  }
-
   func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     locationSubject.send(locations)
-    // errorSubject.send(nil)
   }
 
   func locationManager(_: CLLocationManager, didFailWithError _: Error) {
-    // errorSubject.send(error)
+    // Implement to avoid crashes
+    // Extra Credit: Create a publisher for errors :/
   }
 
   func locationManager(_: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     authorizationSubject.send(status)
   }
-
-//  func locationManager(_: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-//    headingSubject.send(newHeading)
-//    errorSubject.send(nil)
-//  }
-
-//  func errorPublisher() -> AnyPublisher<Error?, Never> {
-//    return errorSubject.eraseToAnyPublisher()
-//  }
 }

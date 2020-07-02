@@ -3,37 +3,53 @@ import CoreLocation
 import SwiftUI
 
 class CoreLocationObject: ObservableObject {
-  let manager: CLLocationManager
-  let publishable: CLLocationManagerPublicist
-
   @Published var authorizationStatus = CLAuthorizationStatus.notDetermined
   @Published var location: CLLocation?
-  // @Published var heading: CLHeading?
 
-  var authorizationCancellable: AnyCancellable!
-  var locationsCancellable: AnyCancellable!
-  var beginUpdatesCancellable: AnyCancellable!
-  // var headingCancellable: AnyCancellable!
+  let manager: CLLocationManager
+  let publicist: CLLocationManagerCombineDelegate
+
+  var cancellables = [AnyCancellable]()
 
   init() {
     let manager = CLLocationManager()
-    let delegate = CLLocationManagerPublicist()
+    let publicist = CLLocationManagerPublicist()
 
-    manager.delegate = delegate
+    manager.delegate = publicist
 
     self.manager = manager
-    publishable = delegate
+    self.publicist = publicist
 
-    let authorizationPublisher = delegate.authorizationPublisher()
-    let locationPublisher = delegate.locationPublisher()
+    let authorizationPublisher = publicist.authorizationPublisher()
+    let locationPublisher = publicist.locationPublisher()
 
-    authorizationCancellable = authorizationPublisher.receive(on: DispatchQueue.main).assign(to: \.authorizationStatus, on: self)
+    // trigger an update when authorization changes
+    authorizationPublisher
+      .sink(receiveValue: beginUpdates)
+      .store(in: &cancellables)
 
-    beginUpdatesCancellable = authorizationPublisher.sink(receiveValue: beginUpdates)
+    // set authorization status when authorization changes
+    authorizationPublisher
+      // since this is used in the UI,
+      //  it needs to be on the main DispatchQueue
+      .receive(on: DispatchQueue.main)
+      // store the value in the authorizationStatus property
+      .assign(to: \.authorizationStatus, on: self)
+      // store the cancellable so it be stopped on deinit
+      .store(in: &cancellables)
 
-    locationsCancellable = locationPublisher.flatMap {
-      Publishers.Sequence(sequence: $0)
-    }.receive(on: DispatchQueue.main).assign(to: \.location, on: self)
+    locationPublisher
+      // convert the array of CLLocation into a Publisher itself
+      .flatMap(Publishers.Sequence.init(sequence:))
+      // in order to match the property map to Optional
+      .map { $0 as CLLocation? }
+      // since this is used in the UI,
+      //  it needs to be on the main DispatchQueue
+      .receive(on: DispatchQueue.main)
+      // store the value in the location property
+      .assign(to: \.location, on: self)
+      // store the cancellable so it be stopped on deinit
+      .store(in: &cancellables)
 
     // headingCancellable = delegate.headingPublisher().receive(on: DispatchQueue.main).assign(to: \.heading, on: self)
   }
@@ -44,10 +60,9 @@ class CoreLocationObject: ObservableObject {
     }
   }
 
-  fileprivate func beginUpdates(_ authorizationStatus: CLAuthorizationStatus) {
+  func beginUpdates(_ authorizationStatus: CLAuthorizationStatus) {
     if authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse {
       manager.startUpdatingLocation()
-      manager.startUpdatingHeading()
     }
   }
 }
