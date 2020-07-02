@@ -16,38 +16,25 @@ extension CLAuthorizationStatus: CustomStringConvertible {
     case .restricted:
       return "Restricted"
     @unknown default:
-      return "?"
-    }
-  }
-}
-
-extension Result where Success == CLLocation, Failure: Error {
-  public var text: String {
-    switch self {
-    case let .success(location):
-      return "\(location.coordinate.latitude),\(location.coordinate.longitude)"
-    case let .failure(error):
-      return error.localizedDescription
+      return "🤷‍♂️"
     }
   }
 }
 
 struct LocationView: View {
+  // CLLocationManager is basically a singleton so an EnvironmentObject ObservableObject makes sense
   @EnvironmentObject var locationObject: CoreLocationObject
+
   var body: some View {
     VStack {
-      Text("\(locationObject.authorizationStatus.description)").onTapGesture {
-        self.locationObject.authorize()
-      }.onReceive(self.locationObject.$authorizationStatus) { _ in
-        self.locationObject.beginUpdates()
-      }
-
+      // use our extension method to display a description of the status
+      Text("\(locationObject.authorizationStatus.description)")
+        .onTapGesture {
+          self.locationObject.authorize()
+        }
+      // use Optional.map to hide the Text if there's no location
       self.locationObject.location.map {
-        Text($0.text)
-      }
-
-      self.locationObject.heading.map {
-        Text("\($0)")
+        Text($0.description)
       }
     }
   }
