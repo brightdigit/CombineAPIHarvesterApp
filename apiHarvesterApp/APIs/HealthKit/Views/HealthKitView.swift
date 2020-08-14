@@ -14,14 +14,14 @@ struct HealthKitView: View {
     VStack {
       Toggle(isOn: $healthKitQueried, label: {
         Text("Health Queried")
-   }).onReceive(queriedPublisher, perform: {
+      }).onReceive(queriedPublisher, perform: {
         self.healthKitQueried = $0
-   })
+      })
       Toggle(isOn: $healthKitAuthorized, label: {
         Text("Health Authorized")
-    }).onReceive(authorizedPublisher, perform: {
+      }).onReceive(authorizedPublisher, perform: {
         self.healthKitAuthorized = $0
-    })
+      })
       HStack {
         Text("Heart Rate")
         Spacer()

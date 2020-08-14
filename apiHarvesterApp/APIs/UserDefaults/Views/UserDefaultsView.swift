@@ -10,7 +10,7 @@ struct UserDefaultsView: View {
     HStack {
       Toggle(isOn: $healthKitQueried, label: {
         Text("Health Queried")
-    })
+      })
     }.onReceive(publisher, perform: {
       self.healthKitQueried = $0
     })

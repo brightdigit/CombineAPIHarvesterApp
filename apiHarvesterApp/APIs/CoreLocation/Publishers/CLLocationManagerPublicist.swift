@@ -17,7 +17,7 @@ class CLLocationManagerPublicist: NSObject, CLLocationManagerCombineDelegate {
   func authorizationPublisher() -> AnyPublisher<CLAuthorizationStatus, Never> {
     return Just(CLLocationManager.authorizationStatus())
       .merge(with:
-        authorizationSubject.compactMap { $0 }
+        authorizationSubject
       ).eraseToAnyPublisher()
   }
 
